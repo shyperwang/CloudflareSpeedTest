@@ -140,7 +140,7 @@ func main() {
 	downloadTestTime = time.Duration(downloadSecond) * time.Second
 
 	// 开始延迟测速
-	fmt.Println("# XIU2/CloudflareSpeedTest " + version + "\n")
+	fmt.Println("# shyperwang/cfst " + version + "\n")
 	if ipv6Mode { // IPv6 模式判断
 		fmt.Println("开始延迟测速（模式：TCP IPv6，端口：" + strconv.Itoa(tcpPort) + "，平均延迟上限：" + fmt.Sprintf("%.2f", timeLimit) + " ms）：")
 	} else {
