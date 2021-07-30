@@ -9,6 +9,7 @@ api=`date +'%Y%m%d'`
 declare -i m
 declare -i n
 declare -i per
+declare -i first
 rm -rf icmp temp data.txt meta.txt log.txt anycast.txt temp.txt
 mkdir icmp
 echo DNS解析获取CF节点IP
