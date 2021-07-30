@@ -22,7 +22,7 @@ curl --ipv4 --retry 3 "https://database.udpfile.com?asn=AS"$asn"&city="$city"&ap
 m=$(cat data.txt | wc -l)
 first=$(sed -n '1p' data.txt)
 declare -i oops
-oops="Ooops!!!"
+oops="Ooops"
 if [[ $first =~ $oops]]
 then
 echo 没有发现ip,请重新运行脚本
