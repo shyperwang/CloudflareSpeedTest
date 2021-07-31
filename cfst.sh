@@ -33,8 +33,7 @@ do
         break
     fi
     done
-declare -i address
-address = https://database.udpfile.com?asn=AS"$asn"&city="$city"&api="%api"
+address="https://database.udpfile.com?asn=AS"$asn"&city="$city"&api="%api""
 echo $address
 m=$(cat data.txt | wc -l)
 first=$(sed -n '1p' data.txt)
@@ -46,5 +45,5 @@ first=$(sed -n '1p' data.txt)
         do
             echo $i>>anycast.txt
         done
+        ./cfst -f anycast.txt -n 200 -p 1 -o result.txt
     fi
-./cfst -f anycast.txt -n 200 -p 1 -o result.txt
