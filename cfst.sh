@@ -36,7 +36,7 @@ do
         
 m=$(cat data.txt | wc -l)
 first=$(sed -n '1p' data.txt)
-    if [ $first =~ "Ooops" ]
+    if [[ $first =~ "Ooops" ]]
     then
         echo 没有发现ip,请重新运行脚本
         break
