@@ -33,6 +33,8 @@ curl --ipv4 --retry 3 "https://database.udpfile.com?asn=AS"$asn"&city="$city"&ap
         break
     fi
     done
+asn=$(cat meta.txt | grep cf-meta-asn: | tr '\r' '\n' | awk '{print $3}')
+city=$(cat meta.txt | grep cf-meta-city: | tr '\r' '\n' | awk '{print $3}')
 address="https://database.udpfile.com?asn=AS"$asn"&city="$city"&api="$api""
 echo $address
 m=$(cat data.txt | wc -l)
