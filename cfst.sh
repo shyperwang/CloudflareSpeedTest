@@ -6,8 +6,6 @@ read -p "请设置期望到 CloudFlare 服务器的带宽大小(单位 Mbps):" b
 speed=bandwidth*128*1024
 starttime=`date +'%Y-%m-%d %H:%M:%S'`
 api=`date +'%Y%m%d'`
-while true
-do
     while true
     do
 		declare -i m
@@ -53,5 +51,3 @@ do
         do
         ./cfst -f anycast.txt -n 200 -p 1 -o result.txt
         done
-        break
- done
