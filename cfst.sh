@@ -34,6 +34,7 @@ do
     fi
     done
 while true
+do
 add = "https://database.udpfile.com?asn=AS"$asn"&city="$city"&api="%api""
 echo $add
 m=$(cat data.txt | wc -l)
