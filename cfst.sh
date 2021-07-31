@@ -33,7 +33,8 @@ do
         break
     fi
     done
-        
+while true
+do
 m=$(cat data.txt | wc -l)
 first=$(sed -n '1p' data.txt)
     if [[ $first =~ "Ooops" ]]
@@ -46,4 +47,5 @@ first=$(sed -n '1p' data.txt)
             echo $i>>anycast.txt
         done
     fi
+done
 ./cfst -f anycast.txt -n 200 -p 1 -o result.txt
