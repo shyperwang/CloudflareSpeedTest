@@ -20,14 +20,14 @@ do
         then
             curl --ipv4 --retry 3 -v https://speed.cloudflare.com/__down>meta.txt 2>&1
         else
-            asn=$(cat meta.txt | grep cf-meta-asn: | tr '\r' '\n' | awk '{print $3}')
-            city=$(cat meta.txt | grep cf-meta-city: | tr '\r' '\n' | awk '{print $3}')
-            latitude=$(cat meta.txt | grep cf-meta-latitude: | tr '\r' '\n' | awk '{print $3}')
-            longitude=$(cat meta.txt | grep cf-meta-longitude: | tr '\r' '\n' | awk '{print $3}')
-            curl --ipv4 --retry 3 "https://database.udpfile.com?asn=AS"$asn"&city="$city"&api="$api"" -o data.txt -#
             break
         fi
     done
+asn=$(cat meta.txt | grep cf-meta-asn: | tr '\r' '\n' | awk '{print $3}')
+city=$(cat meta.txt | grep cf-meta-city: | tr '\r' '\n' | awk '{print $3}')
+latitude=$(cat meta.txt | grep cf-meta-latitude: | tr '\r' '\n' | awk '{print $3}')
+longitude=$(cat meta.txt | grep cf-meta-longitude: | tr '\r' '\n' | awk '{print $3}')
+curl --ipv4 --retry 3 "https://database.udpfile.com?asn=AS"$asn"&city="$city"&api="$api"" -o data.txt -#
     if [ -f "data.txt" ]
     then
         break
