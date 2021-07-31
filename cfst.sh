@@ -33,7 +33,7 @@ do
         break
     fi
     done
-address="https://database.udpfile.com?asn=AS"$asn"&city="$city"&api="%api""
+address="https://database.udpfile.com?asn=AS"$asn"&city="$city"&api="$api""
 echo $address
 m=$(cat data.txt | wc -l)
 first=$(sed -n '1p' data.txt)
