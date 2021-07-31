@@ -33,8 +33,9 @@ do
         break
     fi
     done
-add = "https://database.udpfile.com?asn=AS"$asn"&city="$city"&api="%api""
-echo $add
+declare -i address
+address = "https://database.udpfile.com?asn=AS"$asn"&city="$city"&api="%api""
+echo $address
 m=$(cat data.txt | wc -l)
 first=$(sed -n '1p' data.txt)
     if [[ $first =~ "Ooops" ]]
