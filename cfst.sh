@@ -33,8 +33,6 @@ do
         break
     fi
     done
-while true
-do
 add = "https://database.udpfile.com?asn=AS"$asn"&city="$city"&api="%api""
 echo $add
 m=$(cat data.txt | wc -l)
@@ -42,12 +40,10 @@ first=$(sed -n '1p' data.txt)
     if [[ $first =~ "Ooops" ]]
     then
         echo 没有发现ip,请重新运行脚本
-        break
     else
         for i in `cat data.txt | sed ''$[$m-4]',$d'`
         do
             echo $i>>anycast.txt
         done
     fi
-done
 ./cfst -f anycast.txt -n 200 -p 1 -o result.txt
