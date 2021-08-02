@@ -18,7 +18,7 @@ do
 	do
         if [ ! -f "meta.txt" ]
         then
-            curl --ipv4 --retry 3 -v https://speed.cloudflare.com/__down>meta.txt 2>&1
+            curl --ipv4 --retry 3 -v https://cfsd.shyper.workers.dev/__down>meta.txt 2>&1
         else
             break
         fi
