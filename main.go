@@ -23,6 +23,8 @@ var timeLimit, speedLimit float64
 func init() {
 	var printVersion bool
 	var help = `
+此版本在原作者的基础上稍加修改，更适合自己使用
+原作版本及地址
 CloudflareSpeedTest ` + version + `
 测试 Cloudflare CDN 所有 IP 的延迟和速度，获取最快 IP (IPv4+IPv6)！
 https://github.com/XIU2/CloudflareSpeedTest
@@ -235,7 +237,7 @@ func printResult(data []CloudflareIPData) {
 			}
 
 			if versionNew != "" {
-				fmt.Println("\n*** 发现新版本 [" + versionNew + "]！请前往 [https://github.com/XIU2/CloudflareSpeedTest] 更新！ ***")
+				fmt.Println("\n*** 发现新版本 [" + versionNew + "]！请前往 [https://github.com/XIU2/CloudflareSpeedTest] 更新为原作文件，或者手动去本作者地址[https://github.com/shyperwang/cfst]查看是否更新！ ***")
 			}
 
 			if sysType == "windows" { // 如果是 Windows 系统，则需要按下 回车键 或 Ctrl+C 退出（避免通过双击运行时，测速完毕后直接关闭）
