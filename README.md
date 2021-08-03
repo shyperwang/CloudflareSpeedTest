@@ -1,3 +1,4 @@
+# 本作只是在原作者的基础上稍加修改，更适合自己使用，具体请前往原作
 # XIU2/CloudflareSpeedTest
 
 [![Go Version](https://img.shields.io/github/go-mod/go-version/XIU2/CloudflareSpeedTest.svg?style=flat-square&label=Go&color=00ADD8)](https://github.com/XIU2/CloudflareSpeedTest/blob/master/go.mod)
