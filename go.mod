@@ -1,4 +1,4 @@
-module CloudflareSpeedTest
+module cfst
 
 go 1.14
 
