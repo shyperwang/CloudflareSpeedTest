@@ -136,15 +136,15 @@ else
         url=$(cat temp.txt | grep url= | cut -f 2- -d'=')
         app=$(cat temp.txt | grep app= | cut -f 2- -d'=')
         databasenew=$(cat temp.txt | grep database= | cut -f 2- -d'=')
-		rm -rf temp.txt
-		echo 优选IP $new_ip 满足 $bandwidth MB/s带宽需求
-		echo 峰值速度 $max kB/s
-		echo 公网IP $publicip
-		echo 数据中心 $colo
-		echo 总计用时 $((end_seconds-start_seconds)) 秒
+	rm -rf temp.txt
+	echo 优选IP $new_ip 满足 $bandwidth MB/s带宽需求
+	echo 峰值速度 $max kB/s
+	echo 公网IP $publicip
+	echo 数据中心 $colo
+	echo 总计用时 $((end_seconds-start_seconds)) 秒
         iptables -t nat -D OUTPUT $(iptables -t nat -nL OUTPUT --line-number | grep $localport | awk '{print $1}')
         iptables -t nat -A OUTPUT -p tcp --dport $localport -j DNAT --to-destination $new_ip:$remoteport
-		echo $(date +'%Y-%m-%d %H:%M:%S') IP指向 $new_ip>>old_ip.txt
+	echo $(date +'%Y-%m-%d %H:%M:%S') IP指向 $new_ip>>old_ip.txt
         curl -s -o /dev/null --data "token=3a33dc3751fc459ba2aadb13dcd949f1&title=$new_ip！&content= 优选IP $new_ip 满足 $bandwidth MB/s带宽需求<br>峰值速度 $max kB/s<br>数据中心 $colo<br>总计用时 $((end_seconds-start_seconds)) 秒<br>&template=html" http://pushplus.hxtrip.com/send
         exit 0
     else
