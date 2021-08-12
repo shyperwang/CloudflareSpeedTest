@@ -25,9 +25,9 @@ func init() {
 	var help = `
 此版本在原作者的基础上稍加修改，更适合自己使用
 原作版本及地址
+https://github.com/XIU2/CloudflareSpeedTest
 CloudflareSpeedTest ` + version + `
 测试 Cloudflare CDN 所有 IP 的延迟和速度，获取最快 IP (IPv4+IPv6)！
-https://github.com/XIU2/CloudflareSpeedTest
 
 参数：
     -n 500
@@ -90,7 +90,7 @@ https://github.com/XIU2/CloudflareSpeedTest
 		fmt.Println("检查版本更新中...")
 		checkUpdate()
 		if versionNew != "" {
-			fmt.Println("发现新版本 [" + versionNew + "]！请前往 [https://github.com/XIU2/CloudflareSpeedTest] 更新！")
+			fmt.Println("发现新版本 [" + versionNew + "]！请前往 [https://github.com/shyperwang/cfst] 更新！")
 		} else {
 			fmt.Println("当前为最新版本 [" + version + "]！")
 		}
@@ -275,7 +275,7 @@ func printResult(data []CloudflareIPData) {
 func checkUpdate() {
 	timeout := time.Duration(10 * time.Second)
 	client := http.Client{Timeout: timeout}
-	res, err := client.Get("https://raw.githubusercontent.com/shyperwang/cfst/master/ver.txt")
+	res, err := client.Get("https://cdn.jsdelivr.net/gh/shyperwang/cfst@master/ver.txt")
 	if err == nil {
 		// 读取资源数据 body: []byte
 		body, err := ioutil.ReadAll(res.Body)
