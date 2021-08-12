@@ -23,10 +23,10 @@ var timeLimit, timeLimitLow, speedLimit float64
 func init() {
 	var printVersion bool
 	var help = `
+CloudflareSpeedTest ` + version + `
 此版本在原作者的基础上稍加修改，更适合自己使用
 原作版本及地址
 https://github.com/XIU2/CloudflareSpeedTest
-CloudflareSpeedTest ` + version + `
 测试 Cloudflare CDN 所有 IP 的延迟和速度，获取最快 IP (IPv4+IPv6)！
 
 参数：
