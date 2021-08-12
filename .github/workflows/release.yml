@@ -129,7 +129,7 @@ jobs:
       - name: Build
         run: |
           mkdir -p build_assets
-          go build -o build_assets/cfst -ldflags "-s -w -X"
+          go build -o build_assets/cfst -ldflags "-s -w"
          #go build -o build_assets/cfst -ldflags "-s -w -X main.version=v1.5.0" 
      # - name: UPX website
      #   uses: crazy-max/ghaction-upx@v1
@@ -142,7 +142,7 @@ jobs:
       - name: Build Mips softfloat cfst
         if: matrix.goarch == 'mips' || matrix.goarch == 'mipsle'
         run: |
-          GOMIPS=softfloat go build -o build_assets/cfst_softfloat -ldflags "-s -w --X"
+          GOMIPS=softfloat go build -o build_assets/cfst_softfloat -ldflags "-s -w"
 #         GOMIPS=softfloat go build -o build_assets/cfst_softfloat -ldflags "-s -w --X main.version=v1.5.0"
       - name: Rename Windows cfst
         if: matrix.goos == 'windows'
