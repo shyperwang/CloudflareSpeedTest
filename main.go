@@ -23,7 +23,7 @@ var timeLimit, timeLimitLow, speedLimit float64
 func init() {
 	var printVersion bool
 	var help = `
-CloudflareSpeedTest ` + version + `
+cfst ` + version + `
 此版本在原作者的基础上稍加修改，更适合自己使用
 原作版本及地址
 https://github.com/XIU2/CloudflareSpeedTest
@@ -275,7 +275,8 @@ func printResult(data []CloudflareIPData) {
 func checkUpdate() {
 	timeout := time.Duration(10 * time.Second)
 	client := http.Client{Timeout: timeout}
-	res, err := client.Get("https://cdn.jsdelivr.net/gh/shyperwang/cfst@master/ver.txt")
+//	res, err := client.Get("https://cdn.jsdelivr.net/gh/shyperwang/cfst@master/ver.txt")
+	res, err := client.Get("https://api.xiuer.pw/ver/cloudflarespeedtest.txt")
 	if err == nil {
 		// 读取资源数据 body: []byte
 		body, err := ioutil.ReadAll(res.Body)
