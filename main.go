@@ -275,7 +275,7 @@ func printResult(data []CloudflareIPData) {
 func checkUpdate() {
 	timeout := time.Duration(10 * time.Second)
 	client := http.Client{Timeout: timeout}
-	res, err := client.Get("https://api.xiuer.pw/ver/cloudflarespeedtest.txt")
+	res, err := client.Get("https://raw.githubusercontent.com/shyperwang/cfst/master/ver.txt")
 	if err == nil {
 		// 读取资源数据 body: []byte
 		body, err := ioutil.ReadAll(res.Body)
